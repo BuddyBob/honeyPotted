@@ -2,6 +2,6 @@
 chrome.storage.local.get("lastHoneypotVisit", ({ lastHoneypotVisit }) => {
   if (!lastHoneypotVisit) return;
   const el = document.getElementById("state");
-  el.textContent = "Honeypot access logged!";
+  el.textContent = "Honeypot access logged";
   el.style.color = "#22c55e";           // green
 });
