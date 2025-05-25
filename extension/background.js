@@ -11,7 +11,7 @@ fetch(chrome.runtime.getURL("honeypot_config/pots.json"))
   .catch(err => console.error("Error loading pots data:", err));
 
 
-  
+
 function setupMonitoring() {
   //Navigation 
   chrome.webNavigation.onCompleted.addListener(({ url }) => {
@@ -37,6 +37,7 @@ function sendLog(tabUrl) {
     agent: navigator.userAgent,
   };
 
+  //hosted on render.com free 50 second refresh once down
   fetch("https://honeypotted.onrender.com/log", {
     method: "POST",
     headers: { "Content-Type": "application/json" },

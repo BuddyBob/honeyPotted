@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
 from datetime import datetime
 import psycopg2
+import os
 
 app = Flask(__name__)
 
-URL = "postgresql://neondb_owner:npg_2ICUPa0Vobkl@ep-spring-fire-aafm9wiq-pooler.westus3.azure.neon.tech/neondb?sslmode=require"
+#loaded in render enviornment variable
+URL =  os.getenv("DATABASE_URL")
 conn = psycopg2.connect(URL)
 c = conn.cursor()
 
