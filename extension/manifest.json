@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Exam Monitor",
+  "version": "1.0",
+  "description": "Detects visits to flagged websites.",
+  "web_accessible_resources": [
+  {
+    "resources": ["honeypot_config/pots.json"],
+    "matches": ["<all_urls>"]
+  }
+],
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
